@@ -95,5 +95,10 @@
       "no-eq-null": 2,
       "no-unused-expressions": 0
     }
+  },
+  "dependencies": {
+    "@bsonntag/eslint-config": "^0.7.0",
+    "eslint": "^7.14.0",
+    "prettier": "^2.2.0"
   }
 }
