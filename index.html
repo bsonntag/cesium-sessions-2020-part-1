@@ -27,8 +27,14 @@
       <div class="slides">
         <section>
           <section>
-            <h1>React</h1>
-            <h3>From zero to production</h3>
+            <h1>How to make React apps</h1>
+
+            <aside class="notes">
+              Olá e benvindos à primeira de quatro sessões sobre como fazer
+              aplicações web com React. Nestas sessões vou abordar tudo o que
+              precisam de saber para conseguirem criar as vossas aplicações web,
+              desde...
+            </aside>
           </section>
           <section>
             <ol>
@@ -37,63 +43,35 @@
               <li class="fragment">TBD</li>
               <li class="fragment">TBD</li>
             </ol>
+
+            <aside class="notes">
+              JavaScript, onde vos irei falar sobre como adicionar JavaScript a
+              uma página web, como interagir com o conteúdo da página através de
+              JavaScript, assim como algumas partes mais avançadas da linguagem.
+              <br />
+              Depois vou mostrar-vos o que é React: quais são os problemas que
+              resolve e como se usa.
+            </aside>
           </section>
         </section>
 
         <section>
           <section>
             <p>Benjamim Sonntag</p>
-            <ul class="social-networks">
-              <li>
-                <a
-                  class="social-network-link"
-                  href="https://github.com/bsonntag"
-                  target="_blank"
-                >
-                  <svg
-                    width="40"
-                    xmlns="http://www.w3.org/2000/svg"
-                    version="1.1"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                      fill="white"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                  @bsonntag
-                </a>
-              </li>
-              <li>
-                <a
-                  class="social-network-link"
-                  href="https://twitter.com/benjamimsonntag"
-                  target="_blank"
-                >
-                  <svg
-                    width="40"
-                    xmlns="http://www.w3.org/2000/svg"
-                    version="1.1"
-                    viewBox="0 0 400 400"
-                  >
-                    <circle cx="200" cy="200" fill="#1da1f2" r="200" />
-                    <path
-                      d="M163.4,305.5c88.7,0,137.2-73.5,137.2-137.2c0-2.1,0-4.2-0.1-6.2c9.4-6.8,17.6-15.3,24.1-25 c-8.6,3.8-17.9,6.4-27.7,7.6c10-6,17.6-15.4,21.2-26.7c-9.3,5.5-19.6,9.5-30.6,11.7c-8.8-9.4-21.3-15.2-35.2-15.2 c-26.6,0-48.2,21.6-48.2,48.2c0,3.8,0.4,7.5,1.3,11c-40.1-2-75.6-21.2-99.4-50.4c-4.1,7.1-6.5,15.4-6.5,24.2 c0,16.7,8.5,31.5,21.5,40.1c-7.9-0.2-15.3-2.4-21.8-6c0,0.2,0,0.4,0,0.6c0,23.4,16.6,42.8,38.7,47.3c-4,1.1-8.3,1.7-12.7,1.7 c-3.1,0-6.1-0.3-9.1-0.9c6.1,19.2,23.9,33.1,45,33.5c-16.5,12.9-37.3,20.6-59.9,20.6c-3.9,0-7.7-0.2-11.5-0.7 C110.8,297.5,136.2,305.5,163.4,305.5"
-                      fill="white"
-                    />
-                  </svg>
-                  @benjamimsonntag
-                </a>
-              </li>
-            </ul>
+            <p class="fragment">
+              Engenharia Informática<br />Universidade do Minho
+            </p>
+
+            <aside class="notes">
+              O meu nome é Benjamim Sonntag. Tal como vocês, estudei Engenharia
+              Informática na Universidade do Minho e fiz também parte do CESIUM
+              durante um ano.
+            </aside>
           </section>
           <section>
-            <p>Engenharia Informática<br />Universidade do Minho</p>
-          </section>
-          <section>
-            <a href="https://seegno.com" target="_blank">
+            <a href="https://seegno.com" target="_blank" aria-label="Seegno">
               <svg
+                aria-hidden
                 class="seegno-logo"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 140 32"
@@ -119,25 +97,252 @@
               </svg>
             </a>
             <p>Lead frontend engineer</p>
+
+            <aside class="notes">
+              Neste momento trabalho na Seegno, onde sou o lead da equipa de
+              frontend. A Seegno é uma empresa sediada em Braga, que desenvolve
+              aplicações web para clientes em todo o mundo, sendo que a maior
+              parte do que desenvolvemos é na área das moedas digitais. As
+              principais tecnologias que usamos são React e Node JS.
+            </aside>
+          </section>
+
+          <section>
+            <ul class="social-networks">
+              <li>
+                <a
+                  aria-label="Github profile"
+                  class="social-network-link"
+                  href="https://github.com/bsonntag"
+                  target="_blank"
+                >
+                  <svg
+                    aria-hidden
+                    width="40"
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                      fill="white"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                  @bsonntag
+                </a>
+              </li>
+              <li>
+                <a
+                  aria-label="Twitter profile"
+                  class="social-network-link"
+                  href="https://twitter.com/benjamimsonntag"
+                  target="_blank"
+                >
+                  <svg
+                    aria-hidden
+                    width="40"
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    viewBox="0 0 400 400"
+                  >
+                    <circle cx="200" cy="200" fill="#1da1f2" r="200" />
+                    <path
+                      d="M163.4,305.5c88.7,0,137.2-73.5,137.2-137.2c0-2.1,0-4.2-0.1-6.2c9.4-6.8,17.6-15.3,24.1-25 c-8.6,3.8-17.9,6.4-27.7,7.6c10-6,17.6-15.4,21.2-26.7c-9.3,5.5-19.6,9.5-30.6,11.7c-8.8-9.4-21.3-15.2-35.2-15.2 c-26.6,0-48.2,21.6-48.2,48.2c0,3.8,0.4,7.5,1.3,11c-40.1-2-75.6-21.2-99.4-50.4c-4.1,7.1-6.5,15.4-6.5,24.2 c0,16.7,8.5,31.5,21.5,40.1c-7.9-0.2-15.3-2.4-21.8-6c0,0.2,0,0.4,0,0.6c0,23.4,16.6,42.8,38.7,47.3c-4,1.1-8.3,1.7-12.7,1.7 c-3.1,0-6.1-0.3-9.1-0.9c6.1,19.2,23.9,33.1,45,33.5c-16.5,12.9-37.3,20.6-59.9,20.6c-3.9,0-7.7-0.2-11.5-0.7 C110.8,297.5,136.2,305.5,163.4,305.5"
+                      fill="white"
+                    />
+                  </svg>
+                  @benjamimsonntag
+                </a>
+              </li>
+              <li>
+                <a
+                  aria-label="My email"
+                  class="social-network-link"
+                  href="mailto:benjamimsonntag@gmail.com"
+                >
+                  <svg
+                    aria-hidden
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    viewBox="0 0 32 32"
+                  >
+                    <circle cx="16" cy="16" fill="white" r="16" />
+                    <g
+                      stroke-width="2"
+                      stroke="black"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      transform="translate(4, 4)"
+                    >
+                      <rect x="3" y="5" width="18" height="14" rx="2" />
+                      <polyline points="3 7 12 13 21 7" />
+                    </g>
+                  </svg>
+                  benjamimsonntag &lt;at&gt; gmail.com
+                </a>
+              </li>
+            </ul>
+
+            <aside class="notes">
+              O meu username no Github é bsonntag. Se virem o meu perfil
+              encontrarão lá vários módulos de React e algumas experiências,
+              assim como estes slides. No Twitter o meu username é
+              benjamimsonntag. Estejam à vontade para me contactar por lá caso
+              tenham alguma questão sobre React, sobre o que falarmos aqui
+              nestas sessões, ou sobre desenvolvimento web no geral. Ou se
+              preferirem podem mandar um email para...
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>The Web</h2>
+            <svg
+              aria-label="Diagram of the communication between a browser and a web server."
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#fff"
+              stroke="#fff"
+              viewBox="0 0 600 200"
+              overflow="visible"
+            >
+              <style>
+                .st1 {
+                  font-size: 14px;
+                  text-anchor: middle;
+                }
+              </style>
+              <g id="Hardware_1_" class="fragment">
+                <path
+                  id="Container_2_"
+                  d="M45 55c16.6 0 30 13.4 30 30s-13.4 30-30 30-30-13.4-30-30 13.4-30 30-30m0-5c-19.3 0-35 15.7-35 35s15.7 35 35 35 35-15.7 35-35-15.7-35-35-35h0z"
+                />
+                <text x="45" y="90" class="st0 st1">Files</text>
+              </g>
+              <g id="Server" class="fragment">
+                <g id="Software_1_">
+                  <path
+                    id="Container_3_"
+                    d="M125 55c16.6 0 30 13.4 30 30s-13.4 30-30 30-30-13.4-30-30 13.4-30 30-30m0-5c-19.3 0-35 15.7-35 35s15.7 35 35 35 35-15.7 35-35-15.7-35-35-35h0z"
+                  />
+                  <text>
+                    <tspan x="125" y="80" class="st0 st1">HTTP</tspan>
+                    <tspan x="125" y="97" class="st0 st1">server</tspan>
+                  </text>
+                </g>
+                <path
+                  id="Container_1_"
+                  d="M85 5c44.1 0 80 35.9 80 80s-35.9 80-80 80S5 129.1 5 85 40.9 5 85 5m0-5C38.1 0 0 38.1 0 85s38.1 85 85 85 85-38.1 85-85S131.9 0 85 0h0z"
+                />
+                <text x="85" y="195" class="st2 st1">Web server</text>
+              </g>
+              <g id="Browser" class="fragment">
+                <g id="Computer_2_">
+                  <path
+                    id="Screen_2_"
+                    d="M550 57.6v40h-70v-40h70m0-5h-70c-2.8 0-5 2.2-5 5v40c0 2.8 2.2 5 5 5h70c2.8 0 5-2.2 5-5v-40c0-2.7-2.2-5-5-5h0z"
+                  />
+                  <path
+                    id="Keyboard_2_"
+                    d="M565 110.6H465c-2.8 0-5-2.2-5-5v0h110v0c0 2.8-2.2 5-5 5z"
+                  />
+                </g>
+                <path
+                  id="Container_5_"
+                  d="M515 5.6c44.1 0 80 35.9 80 80s-35.9 80-80 80-80-35.9-80-80 35.9-80 80-80m0-5c-46.9 0-85 38.1-85 85s38.1 85 85 85 85-38.1 85-85-38.1-85-85-85h0z"
+                />
+                <text x="515" y="195" class="st2 st1">Browser</text>
+              </g>
+              <g id="HTTP" class="fragment">
+                <path
+                  id="left_arrow"
+                  d="M175 54v-6l-10 7.5 10 7.5v-5.9h265V54z"
+                />
+                <text x="375" y="73" class="st0 st1">HTTP Request</text>
+              </g>
+              <g id="HTTP" class="fragment">
+                <path
+                  id="right_arrow"
+                  d="M425 113v-6l10 7.5-10 7.5v-5.9H160V113z"
+                />
+                <text x="227" y="107" class="st0 st1">HTTP Response</text>
+              </g>
+            </svg>
+            <aside class="fragment">
+              <small>
+                Source:
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server"
+                  target="_blank"
+                  >MDN</a
+                >
+              </small>
+            </aside>
+
+            <aside class="notes">
+              Hoje vamos falar sobre JavaScript, mas antes vamos falar primeiro
+              um pouco sobre como a Web funciona.
+              <br />
+              Um website é composto por vários ficheiros: ficheiros HTML,
+              imagens, ficheiros de CSS e JavaScript.
+              <br />
+              Estes ficheiros têm que estar alojados num servidor web, que os
+              serve através de HTTP.
+              <br />
+              Quando alguém quer aceder ao vosso website, terá que abrir um
+              browser e introduzir o endereço do vosso website, ou navegar até
+              lá a partir de um motor de pesquisa como o Google.
+              <br />
+              Ao abrir o website, o browser vai fazer vários pedidos HTTP para
+              pedir os vários ficheiros que compoem o site. Esses ficheiros
+              serão então enviados para o browser em resposta a esses pedidos.
+            </aside>
           </section>
         </section>
 
         <section>
           <section>
             <h2>JavaScript<br />-<br />Beyond the basics</h2>
+
+            <aside class="notes">
+              Vamos então falar sobre JavaScript. Sei que já falaram sobre as
+              bases da linguagem, por isso hoje vou falar-vos de umas coisas um
+              pouco mais avançadas, que vocês precisam de saber para conseguirem
+              usar React. Mas primeiro, vocês sabem porque JavaScript existe
+              sequer?
+            </aside>
           </section>
           <section>
             <h3>The Web without JS</h3>
             <ul>
-              <li class="fragment">No interactions</li>
               <li class="fragment">Static display of information</li>
+              <li class="fragment">No interactions</li>
               <li class="fragment">
                 Dynamic content must be handled by the server
               </li>
             </ul>
-          </section>
-          <section>
-            <img src="images/index-html-request.png" class="r-stretch" />
+
+            <aside class="notes">
+              Não sei se vocês sabem, mas a web começou apenas com HTML. Na
+              altura a web era usada pela comunidade científica como uma forma
+              de partilhar documentos, tais como teses e artigos científicos.
+              <br />
+              Usando apenas HTML, apenas se consegue fazer páginas estáticas,
+              que servem apenas para mostrar informação.
+              <br />
+              Não é possível ter interações, como menus que abrem e fecham, nem
+              funcionalidades como drag & drop.
+              <br />
+              Além disso, tudo o que seja conteúdo dinâmico terá que ser tratado
+              no servidor.
+              <br />
+              Por exemplo, imaginem um site que mostra uma lista de produtos.
+              Imaginem que essa lista é paginada, onde se mostram 10 produtos
+              por página. Ao navegar entre páginas, todo o HTML terá que ser
+              pedido outra vez.
+            </aside>
           </section>
           <section>
             <h3>The Web with JS</h3>
@@ -148,6 +353,18 @@
                 dinamically
               </li>
             </ul>
+
+            <aside class="notes">
+              Com JavaScript conseguimos adicionar qualquer tipo de interação
+              aos nossos websites e aplicações web.
+              <br />
+              É também possível pedir conteúdo dinâmico ao servidor e mostrá-lo
+              sem ter que pedir toda uma página de HTML.
+              <br />
+              Voltando ao exemplo da lista de produtos, com JavaScript é
+              possível pedir apenas os dados da página que queremos, e
+              substituir o conteúdo do HTML com os dados novos.
+            </aside>
           </section>
           <section>
             <img src="images/products-data-request.png" class="r-stretch" />
