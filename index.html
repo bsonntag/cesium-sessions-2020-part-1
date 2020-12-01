@@ -615,12 +615,6 @@ button.addEventListener('click', event => {
 
         <section>
           <section>
-            <h3>Promises and Async-await</h3>
-          </section>
-        </section>
-
-        <section>
-          <section>
             <h3>Destructuring, Rest and Spread</h3>
           </section>
           <section>
@@ -843,6 +837,85 @@ console.log(superUser);
 
         <section>
           <section>
+            <h3>Promises and Async-await</h3>
+          </section>
+
+          <section>
+            <h4>Promise</h4>
+            <p>
+              Represents the eventual completion (or failure) of an asynchronous
+              operation and its resulting value.
+            </p>
+          </section>
+          <section>
+            <h5>Promise states</h5>
+            <ul>
+              <li>Pending</li>
+              <li>Resolved</li>
+              <li>Rejected</li>
+            </ul>
+          </section>
+          <section>
+            <pre><code class="js" data-trim data-noescape data-line-numbers="1|3-5|7-9">
+let usersPromise = fetchCurrentUser();
+
+usersPromise.then(user => {
+  console.log(user);
+});
+
+usersPromise.catch(error => {
+  console.log(error);
+});
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="js" data-trim data-noescape>
+fetchCurrentUser()
+  .then(user => {
+    console.log(user);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="js" data-trim data-noescape>
+fetchCurrentUser()
+  .then(user => {
+    return fetchUserBlogPosts(user);
+  })
+  .then(blogPosts => {
+    console.log(blogPosts);
+  });
+            </code></pre>
+          </section>
+          <section>
+            <h4>Async-await</h4>
+            <p>
+              The <code>await</code> operator can be used to wait for a promise.
+              It can only be used inside an <code>async</code> function.
+            </p>
+          </section>
+          <section>
+            <pre><code class="js" data-trim data-noescape>
+async function getUserAndBlogPosts() {
+  try {
+    let user = await fetchCurrentUser();
+    console.log(user);
+
+    let blogPosts = await fetchUserBlogPosts(user);
+    console.log(blogPosts);
+  } catch (error) (
+    console.log(error);
+  }
+}
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
             <h3>ES.Next and Babel</h3>
           </section>
           <section>
@@ -853,6 +926,12 @@ console.log(superUser);
             <p class="fragment">
               Last release was ECMAScript 2020, released in June 2020
             </p>
+            <a
+              class="fragment"
+              href="https://github.com/tc39/proposals"
+              target="_blank"
+              >Proposals</a
+            >
           </section>
           <section>
             <h4>Babel</h4>
@@ -877,6 +956,81 @@ console.log(superUser);
         <section>
           <section>
             <h3>Modules</h3>
+
+            <aside class="notes">
+              No início, o JavaScript era apenas usado para pequenos scripts,
+              para dar um pouco de interatividade a páginas web.
+              <br />
+              Mas desde há cerca de uma década que se fazem aplicações inteiras
+              em JavaScript, não só web apps, mas também aplicações desktop,
+              mobile e servidores, usando tecnologias como Node JS, Electron e
+              React Native (do qual vamos falar um pouco mais à frente).
+              <br />
+              Como tal, foi necessário criar mecanismos para separar código
+              JavaScript em vários ficheiros. A primeira plataforma a fazer isto
+              foi Node JS
+            </aside>
+          </section>
+          <section>
+            <h4>Node JS modules</h4>
+            <div class="fragment">
+              <code>user.js</code>
+              <pre><code class="js" data-trim data-noescape data-line-numbers="|3">
+let user = { name: 'Benjamim Sonntag' };
+
+module.exports = user;
+              </code></pre>
+            </div>
+            <div class="fragment">
+              <code>main.js</code>
+              <pre><code class="js" data-trim data-noescape data-line-numbers="|1">
+let user = require('./user');
+
+console.log('user name', user.name);
+              </code></pre>
+            </div>
+          </section>
+          <section>
+            <h4>NPM</h4>
+            <p>Node package manager</p>
+            <pre class="fragment"><code class="sh" data-trim data-noescape>
+$ npm install react
+            </code></pre>
+            <a class="fragment" href="https://docs.npmjs.com/" target="_blank"
+              >Documentation</a
+            >
+          </section>
+          <section>
+            <h4>Yarn</h4>
+            <p>NPM alternative</p>
+            <pre class="fragment"><code class="sh" data-trim data-noescape>
+$ yarn add react
+            </code></pre>
+            <a class="fragment" href="https://yarnpkg.com/" target="_blank"
+              >Documentation</a
+            >
+          </section>
+          <section>
+            <h4>ES Modules</h4>
+            <div class="fragment">
+              <code>user.js</code>
+              <pre><code class="js" data-trim data-noescape>
+export let user = { name: 'Benjamim Sonntag' };
+              </code></pre>
+            </div>
+            <div class="fragment">
+              <code>main.js</code>
+              <pre><code class="js" data-trim data-noescape data-line-numbers="1">
+import { user } from './user';
+
+console.log('user name', user.name);
+              </code></pre>
+            </div>
+          </section>
+          <section>
+            <h4>Webpack</h4>
+            <img src="/images/webpack.png" />
+            <a href="https://webpack.js.org/" target="_blank">Documentation</a>
           </section>
         </section>
       </div>
