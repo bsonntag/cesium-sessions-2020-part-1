@@ -40,17 +40,23 @@
             <ol>
               <li class="fragment">JavaScript - Beyond the basics</li>
               <li class="fragment">Getting started with React</li>
-              <li class="fragment">TBD</li>
-              <li class="fragment">TBD</li>
+              <li class="fragment">Advanced React</li>
+              <li class="fragment">React Frameworks</li>
             </ol>
 
             <aside class="notes">
-              JavaScript, onde vos irei falar sobre como adicionar JavaScript a
-              uma página web, como interagir com o conteúdo da página através de
-              JavaScript, assim como algumas partes mais avançadas da linguagem.
+              JavaScript, onde vos irei falar sobre algumas partes mais
+              avançadas da linguagem. Vou também recapitular e falar um pouco
+              mais a fundo de algumas coisas que já viram na segunda, como
+              adicionar JavaScript a uma página web e como interagir com o
+              conteúdo da página através de JavaScript.
               <br />
-              Depois vou mostrar-vos o que é React: quais são os problemas que
-              resolve e como se usa.
+              Na próxima sessão, na sexta, vou mostrar-vos o que é React: quais
+              são os problemas que resolve e como se usa.
+              <br />
+              Nas duas últimas sessões vamos falar de tópicos mais avançados de
+              React, e vamos ver algumas bibliotecas e frameworks construídas
+              por cima de React.
             </aside>
           </section>
         </section>
@@ -58,14 +64,11 @@
         <section>
           <section>
             <p>Benjamim Sonntag</p>
-            <p class="fragment">
-              Engenharia Informática<br />Universidade do Minho
-            </p>
+            <p>Engenharia Informática<br />Universidade do Minho</p>
 
             <aside class="notes">
-              O meu nome é Benjamim Sonntag. Tal como vocês, estudei Engenharia
-              Informática na Universidade do Minho e fiz também parte do CESIUM
-              durante um ano.
+              O meu nome é Benjamim Sonntag. Tal como vocês o estão a fazer
+              agora, estudei Engenharia Informática na Universidade do Minho.
             </aside>
           </section>
           <section>
@@ -100,9 +103,11 @@
 
             <aside class="notes">
               Neste momento trabalho na Seegno, onde sou o lead da equipa de
-              frontend. A Seegno é uma empresa sediada em Braga, que desenvolve
-              aplicações web para clientes em todo o mundo, sendo que a maior
-              parte do que desenvolvemos é na área das moedas digitais. As
+              frontend.
+              <br />
+              A Seegno é uma empresa sediada em Braga, que desenvolve aplicações
+              web para clientes em todo o mundo, sendo que a maior parte das
+              aplicações que desenvolvemos é na área das moedas digitais. As
               principais tecnologias que usamos são React e Node JS.
             </aside>
           </section>
@@ -155,44 +160,16 @@
                   @benjamimsonntag
                 </a>
               </li>
-              <li>
-                <a
-                  aria-label="My email"
-                  class="social-network-link"
-                  href="mailto:benjamimsonntag@gmail.com"
-                >
-                  <svg
-                    aria-hidden
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    viewBox="0 0 32 32"
-                  >
-                    <circle cx="16" cy="16" fill="white" r="16" />
-                    <g
-                      stroke-width="2"
-                      stroke="black"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      transform="translate(4, 4)"
-                    >
-                      <rect x="3" y="5" width="18" height="14" rx="2" />
-                      <polyline points="3 7 12 13 21 7" />
-                    </g>
-                  </svg>
-                  benjamimsonntag &lt;at&gt; gmail.com
-                </a>
-              </li>
             </ul>
 
             <aside class="notes">
               O meu username no Github é bsonntag. Se virem o meu perfil
               encontrarão lá vários módulos de React e algumas experiências,
               assim como estes slides. No Twitter o meu username é
-              benjamimsonntag. Estejam à vontade para me contactar por lá caso
-              tenham alguma questão sobre React, sobre o que falarmos aqui
-              nestas sessões, ou sobre desenvolvimento web no geral. Ou se
-              preferirem podem mandar um email para...
+              benjamimsonntag. Estejam à vontade para falar comigo, seja pelo
+              Discord ou pelo Twitter, caso tenham alguma questão sobre React,
+              sobre o que falarmos aqui nestas sessões, ou sobre desenvolvimento
+              web no geral.
             </aside>
           </section>
         </section>
@@ -285,11 +262,11 @@
               Hoje vamos falar sobre JavaScript, mas antes vamos falar primeiro
               um pouco sobre como a Web funciona.
               <br />
-              Um website é composto por vários ficheiros: ficheiros HTML,
-              imagens, ficheiros de CSS e JavaScript.
+              Um website é composto por vários ficheiros: ficheiros HTML, CSS,
+              JavaScript, imagens, etc.
               <br />
-              Estes ficheiros têm que estar alojados num servidor web, que os
-              serve através de HTTP.
+              Estes ficheiros estão alojados num servidor web, que os serve
+              através do protocolo HTTP.
               <br />
               Quando alguém quer aceder ao vosso website, terá que abrir um
               browser e introduzir o endereço do vosso website, ou navegar até
@@ -299,6 +276,11 @@
               pedir os vários ficheiros que compoem o site. Esses ficheiros
               serão então enviados para o browser em resposta a esses pedidos.
             </aside>
+          </section>
+          <section>
+            <a href="https://cesium.di.uminho.pt/" target="_blank">Example</a>
+
+            <aside class="notes">Vamos ver isto na prática?</aside>
           </section>
         </section>
 
@@ -310,77 +292,19 @@
               Vamos então falar sobre JavaScript. Sei que já falaram sobre as
               bases da linguagem, por isso hoje vou falar-vos de umas coisas um
               pouco mais avançadas, que vocês precisam de saber para conseguirem
-              usar React. Mas primeiro, vocês sabem porque JavaScript existe
-              sequer?
-            </aside>
-          </section>
-          <section>
-            <h3>The Web without JS</h3>
-            <ul>
-              <li class="fragment">Static display of information</li>
-              <li class="fragment">
-                Dynamic content must be handled by the server
-              </li>
-              <li class="fragment">No interactions</li>
-              <li class="fragment">Limited funcionality</li>
-            </ul>
-
-            <aside class="notes">
-              A web começou apenas com HTML. Na altura a web era usada pela
-              comunidade científica como uma forma de partilhar documentos, tais
-              como teses e artigos científicos.
-              <br />
-              Usando apenas HTML, apenas se consegue fazer páginas estáticas,
-              que servem apenas para mostrar informação.
-              <br />
-              Como tal, tudo o que seja conteúdo dinâmico terá que ser tratado
-              no servidor.
-              <br />
-              Por exemplo, imaginem um site que mostra uma lista de produtos.
-              Imaginem que essa lista é paginada, onde se mostram 10 produtos
-              por página. Ao navegar entre páginas, todo o HTML terá que ser
-              pedido outra vez.
-              <br />
-              Para além disso, não é possível ter interações, como menus que
-              abrem e fecham,
-              <br />
-              nem funcionalidades como drag & drop, geolocalização ou video
-              chamadas.
-            </aside>
-          </section>
-          <section>
-            <h3>The Web with JS</h3>
-            <ul>
-              <li class="fragment">
-                Content can be requested by the browsers and displayed
-                dinamically
-              </li>
-              <li class="fragment">Rich interactions</li>
-            </ul>
-
-            <aside class="notes">
-              Com JavaScript tudo isto se torna possível na Web.
-              <br />
-              Passa a ser possível pedir conteúdo dinâmico ao servidor e
-              mostrá-lo sem ter que pedir toda uma página de HTML.
-              <br />
-              Voltando ao exemplo da lista de produtos, com JavaScript é
-              possível pedir apenas os dados da página que queremos, e
-              substituir o conteúdo do HTML com os dados novos.
-              <br />
-              Conseguimos adicionar qualquer tipo de interação aos nossos
-              websites e aplicações web.
+              usar React.
             </aside>
           </section>
           <section>
             <ol>
               <li class="fragment">JS in the browser</li>
-              <li class="fragment">The DOM</li>
-              <li class="fragment">Functions and Scopes</li>
-              <li class="fragment">Promises and Async-await</li>
+              <li class="fragment">Basics recap</li>
               <li class="fragment">Destructuring, Rest and Spread</li>
+              <li class="fragment">Optional chaining</li>
+              <li class="fragment">Promises and Async-await</li>
               <li class="fragment">ES6 and Babel</li>
               <li class="fragment">Modules</li>
+              <li class="fragment">Interacting with the DOM</li>
             </ol>
           </section>
         </section>
@@ -476,10 +400,8 @@ console.log('Hello, world!');
           <section>
             <h5>Using <code>defer</code></h5>
             <ol>
-              <li>
-                Script is requested <em>and</em><br />HTML content is parsed and
-                displayed
-              </li>
+              <li>Script is requested</li>
+              <li>HTML content is parsed and displayed</li>
               <li>Script is executed</li>
             </ol>
             <pre><code class="html" data-trim data-noescape data-line-numbers="4">
@@ -516,100 +438,12 @@ console.log('Hello, world!');
 
         <section>
           <section>
-            <h3>The DOM</h3>
-          </section>
-          <section>
-            <h4>Getting elements from the page</h4>
+            <h3>Basics recap</h3>
             <ul>
-              <li><code>document.getElementById</code></li>
-              <li><code>document.getElementsByClassName</code></li>
-              <li><code>document.querySelector</code></li>
-              <li><code>document.querySelectorAll</code></li>
+              <li class="fragment">Variables</li>
+              <li class="fragment">Objects</li>
+              <li class="fragment">Functions</li>
             </ul>
-          </section>
-          <section>
-            <h5><code>getElementById</code></h5>
-            <div class="fragment">
-              <pre><code class="html" data-trim data-noescape>
-&lt;button id="my-button"&gt;Click this&lt;/button&gt;
-							</code></pre>
-            </div>
-            <div class="fragment">
-              <pre><code class="js" data-trim data-noescape>
-let button = document.getElementById('my-button');
-							</code></pre>
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById"
-                target="_blank"
-                >Documentation</a
-              >
-            </div>
-          </section>
-          <section>
-            <h4>Creating elements</h4>
-            <div class="fragment">
-              <pre><code class="js" data-trim data-noescape>
-let newDiv = document.createElement('div');
-						</code></pre>
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement"
-                target="_blank"
-                >Documentation</a
-              >
-            </div>
-          </section>
-          <section>
-            <h4>Adding elements to the page</h4>
-            <div class="fragment">
-              <pre><code class="js" data-trim data-noescape>
-let container = document.getElementById('container');
-let newDiv = document.createElement('div');
-
-container.appendChild(newDiv);
-							</code></pre>
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild"
-                target="_blank"
-                >Documentation</a
-              >
-            </div>
-          </section>
-          <section>
-            <h4>Handling events</h4>
-            <div class="fragment">
-              <pre><code class="js" data-trim data-noescape data-line-numbers="3-5">
-let button = document.getElementById('my-button');
-
-button.addEventListener('click', event => {
-	console.log('button has been clicked!');
-});
-							</code></pre>
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild"
-                target="_blank"
-                >Documentation</a
-              >
-              <div class="fragment">
-                <a
-                  href="https://codesandbox.io/s/cesium-example-3-zk452?file=/index.html"
-                  target="_blank"
-                  >Example</a
-                >
-              </div>
-              <div class="fragment">
-                <a
-                  href="https://codesandbox.io/s/cesium-example-4-bx0fp?file=/index.html"
-                  target="_blank"
-                  >Another example</a
-                >
-              </div>
-            </div>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3>Functions and scopes</h3>
           </section>
         </section>
 
@@ -631,8 +465,6 @@ button.addEventListener('click', event => {
                 >MDN</a
               >
             </small>
-
-            <aside class="notes">TODO</aside>
           </section>
           <section>
             <h5>Array destructuring</h5>
@@ -837,6 +669,53 @@ console.log(superUser);
 
         <section>
           <section>
+            <h3>Optional chaining</h3>
+            <p class="fragment">
+              Permits reading the value of a property located deep within a
+              chain of connected objects without having to expressly validate
+              that each reference in the chain is valid.
+            </p>
+
+            <aside class="notes">
+              O operador de optional chaining permite-nos ler o valor de uma
+              propriedade aninhada numa sequência de objetos dentro de objetos,
+              sem ser preciso validar que cada um desses objectos existe.
+            </aside>
+          </section>
+          <section>
+            <pre><code class="js" data-trim data-noescape>
+let user = {
+  account: {
+    name: 'Benjamim'
+  }
+};
+            </code></pre>
+            <pre class="fragment"><code class="js" data-trim data-noescape>
+function getUserName(user) {
+  return user.account.name;
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="js" data-trim data-noescape>
+function getUserName(user) {
+  if (user != null) {
+    return user.account.name;
+  }
+}
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="js" data-trim data-noescape>
+function getUserName(user) {
+  return user?.account.name;
+}
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
             <h3>Promises and Async-await</h3>
           </section>
 
@@ -968,7 +847,7 @@ async function getUserAndBlogPosts() {
               <br />
               Como tal, foi necessário criar mecanismos para separar código
               JavaScript em vários ficheiros. A primeira plataforma a fazer isto
-              foi Node JS
+              foi Node JS.
             </aside>
           </section>
           <section>
@@ -1015,13 +894,15 @@ $ yarn add react
             <div class="fragment">
               <code>user.js</code>
               <pre><code class="js" data-trim data-noescape>
-export let user = { name: 'Benjamim Sonntag' };
+let user = { name: 'Benjamim Sonntag' };
+
+export default user;
               </code></pre>
             </div>
             <div class="fragment">
               <code>main.js</code>
               <pre><code class="js" data-trim data-noescape data-line-numbers="1">
-import { user } from './user';
+import user from './user';
 
 console.log('user name', user.name);
               </code></pre>
@@ -1031,6 +912,117 @@ console.log('user name', user.name);
             <h4>Webpack</h4>
             <img src="/images/webpack.png" />
             <a href="https://webpack.js.org/" target="_blank">Documentation</a>
+          </section>
+          <section>
+            <a
+              href="https://codesandbox.io/s/modules-example-fcslz?file=/index.html"
+              target="_blank"
+              >Example</a
+            >
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Interacting with the DOM</h3>
+          </section>
+          <section>
+            <h4>Getting elements from the page</h4>
+            <ul>
+              <li><code>document.getElementById</code></li>
+              <li><code>document.getElementsByClassName</code></li>
+              <li><code>document.querySelector</code></li>
+              <li><code>document.querySelectorAll</code></li>
+            </ul>
+          </section>
+          <section>
+            <h5><code>getElementById</code></h5>
+            <div class="fragment">
+              <pre><code class="html" data-trim data-noescape>
+&lt;button id="my-button"&gt;Click this&lt;/button&gt;
+							</code></pre>
+            </div>
+            <div class="fragment">
+              <pre><code class="js" data-trim data-noescape>
+let button = document.getElementById('my-button');
+							</code></pre>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById"
+                target="_blank"
+                >Documentation</a
+              >
+            </div>
+          </section>
+          <section>
+            <h4>Creating elements</h4>
+            <div class="fragment">
+              <pre><code class="js" data-trim data-noescape>
+let newDiv = document.createElement('div');
+						</code></pre>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement"
+                target="_blank"
+                >Documentation</a
+              >
+            </div>
+          </section>
+          <section>
+            <h4>Adding elements to the page</h4>
+            <div class="fragment">
+              <pre><code class="js" data-trim data-noescape>
+let container = document.getElementById('container');
+let newDiv = document.createElement('div');
+
+container.appendChild(newDiv);
+							</code></pre>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild"
+                target="_blank"
+                >Documentation</a
+              >
+            </div>
+          </section>
+          <section>
+            <h4>Handling events</h4>
+            <div class="fragment">
+              <pre><code class="js" data-trim data-noescape data-line-numbers="3-5">
+let button = document.getElementById('my-button');
+
+button.addEventListener('click', event => {
+	console.log('the button has been clicked!');
+});
+							</code></pre>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild"
+                target="_blank"
+                >Documentation</a
+              >
+              <div class="fragment">
+                <a
+                  href="https://codesandbox.io/s/cesium-example-3-zk452?file=/index.html"
+                  target="_blank"
+                  >Example</a
+                >
+              </div>
+              <div class="fragment">
+                <a
+                  href="https://codesandbox.io/s/cesium-example-4-bx0fp?file=/index.html"
+                  target="_blank"
+                  >Another example</a
+                >
+              </div>
+            </div>
+          </section>
+          <section>
+            <a href="https://github.com/bsonntag/bsurl" target="_blank"
+              >Full example</a
+            >
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Questions?</h3>
           </section>
         </section>
       </div>
